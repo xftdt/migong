@@ -1,0 +1,143 @@
+#include<stdio.h>
+#include<conio.h>
+#include<windows.h>
+int main()
+{
+	char a[9][12]=
+	{
+		{"o#*********"},
+		{"***###*###*"},
+		{"###**#****#"},
+		{"*#**###**#*"},
+		{"***********"},
+		{"#####*##*##"},
+		{"**#*****#*E"},
+		{"***#*###**#"},
+		{"*#*********"},
+	};
+	for(int i = 0;i < 9;i++)
+	{
+		for(int j = 0;j < 11;j++)
+		{
+			printf("%c",a[i][j]);
+		}
+		printf("\n");
+	}
+	int x = 0,y = 0;
+	
+	printf("x=%d,y=%d\n",x+1,y+1);
+	char m;
+	printf("wsad是上下左右！o是你现在的位置");
+	while(x != 8||y != 10)
+	{
+		m = getch();
+		if(m == 's')
+		{
+			if(a[x + 1][y]!='#')
+			{
+				a[x][y] = ' ';
+				x++;
+				a[x][y] = 'o';
+				system("cls");
+				for(int i = 0;i < 9;i++)
+				{
+					for(int j = 0;j < 11;j++)
+					{
+						printf("%c",a[i][j]);
+					}
+					printf("\n");
+				}
+				printf("x=%d,y=%d\n",x+1,y+1);
+				
+			}
+		}
+		if(m == 'w')
+		{
+			if(a[x - 1][y] != '#')
+			{
+				a[x][y] = ' ';
+				x--;
+				a[x][y] = 'o';
+				system("cls");
+				for(int i = 0;i < 9;i++)
+				{
+					for(int j = 0;j < 11;j++)
+					{
+						printf("%c",a[i][j]);
+					}
+					printf("\n");
+				}
+				printf("x=%d,y=%d\n",x+1,y+1);
+				
+			}
+		}
+        if(m == 'a')
+		{
+			if(a[x][y-1] != '#')
+			{
+				a[x][y] = ' ';
+				y--;
+				a[x][y] = 'o';
+				system("cls");
+				for(int i = 0;i < 9;i++)
+				{
+					for(int j = 0;j < 11;j++)
+					{
+						printf("%c",a[i][j]);
+					}
+					printf("\n");
+				}
+				printf("x=%d,y=%d\n",x+1,y+1);
+				
+			}
+		}
+		
+		if(m == 'd')
+		{
+			if(a[x][y + 1] != '#')
+			{
+				a[x][y] = ' ';
+				y++;
+				a[x][y] = 'o';
+				system("cls");
+				for(int i = 0;i < 9;i++)
+				{
+					for(int j = 0;j < 11;j++)
+					{
+						printf("%c",a[i][j]);
+					}
+					printf("\n");
+				}
+				printf("x=%d,y=%d\n",x+1,y+1);
+				
+			}
+		}
+		if(a[x][y] == a[6][10])
+		{
+			printf("你成功了！");
+			break;
+		}
+	}
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
